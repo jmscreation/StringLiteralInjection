@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1573743473 source:c:\users\aj\desktop\c++\codeinjection\maininject.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+
+1573762185 source:z:\josh\c++\codeinjection\maininject.cpp
+	<iostream>
+	<string>
+	"empty.h"
+	"injector.h"
+	"compressor.h"
+
+1573757546 source:z:\josh\c++\codeinjection\main.cpp
+	<iostream>
+	"empty.h"
+	"compressor.h"
+
+1573752761 z:\josh\c++\codeinjection\compressor.h
+	<string>
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<sstream>
+	<zlib.h>
+
+1573752862 source:z:\josh\c++\codeinjection\compressor.cpp
+	"compressor.h"
+
+1573757580 z:\josh\c++\codeinjection\empty.h
+
+1573761365 z:\josh\c++\codeinjection\injector.h
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+	<windows.h>
+	"empty.h"
+	"compressor.h"
+
+1573759215 source:z:\josh\c++\codeinjection\resources.rc
+
+1573761512 source:z:\josh\c++\codeinjection\injector.cpp
+	"injector.h"
+

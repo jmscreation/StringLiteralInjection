@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CodeInjection" />
+		<Option pch_mode="2" />
+		<Option compiler="gnu_gcc_730_64bit_compiler" />
+		<Build>
+			<Target title="EmptyContainer">
+				<Option output="Application" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_730_64bit_compiler" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Injector">
+				<Option output="bin/Release/Inject" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_730_64bit_compiler" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-m64" />
+		</Compiler>
+		<Linker>
+			<Add option="-static-libstdc++" />
+			<Add option="-static-libgcc" />
+			<Add option="-static" />
+			<Add option="-m64" />
+			<Add library="z" />
+		</Linker>
+		<Unit filename="compressor.cpp" />
+		<Unit filename="compressor.h" />
+		<Unit filename="console.cpp" />
+		<Unit filename="console.h" />
+		<Unit filename="empty.h">
+			<Option target="EmptyContainer" />
+		</Unit>
+		<Unit filename="injector.cpp">
+			<Option target="Injector" />
+		</Unit>
+		<Unit filename="injector.h">
+			<Option target="Injector" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option target="EmptyContainer" />
+		</Unit>
+		<Unit filename="maininject.cpp">
+			<Option target="Injector" />
+		</Unit>
+		<Unit filename="resources.rc">
+			<Option compilerVar="WINDRES" />
+			<Option target="Injector" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
