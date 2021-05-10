@@ -1,4 +1,6 @@
 # Prerequisites
+*.layout
+*.depend
 *.d
 
 # Compiled Object files
@@ -29,4 +31,8 @@
 # Executables
 *.out
 *.app
-bin/Release/export.exe
+
+
+#Folders
+/bin
+/obj

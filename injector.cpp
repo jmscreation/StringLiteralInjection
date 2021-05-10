@@ -43,6 +43,7 @@ bool Injector::loadResource(int resource){
 
 bool Injector::inject(const std::string& path){
     bool success = false;
+    unsigned int sz;
     string fdata; //actual data used for storing file in memory
     do {
         {   /// Import file data from container application
@@ -55,26 +56,7 @@ bool Injector::inject(const std::string& path){
             }
         }   // End file memory scope
 
-
-        string needle = NEEDLE_OPEN,
-              newData = injectionData;  //Injection data copied locally here
-        size_t length, pos;
-        {   /// Search for import location in exe file data
-            log << "Searching for import location..." << endl;
-            pos = fdata.find(needle);
-            if(pos == string::npos) {
-                log << "Could find target injection offset" << endl;
-                break;
-            }
-            length = fdata.find('\0', pos) - pos;
-            log << "Found injection target @" << pos << " of length " << length << endl;
-
-            if(newData.size() + 4 > length){    //Check if the new data is larger than what the target will accept
-                log << "Cannot inject more data than allocated" << endl;
-                break;
-            }
-        }   // End searching scope
-
+        string newData = injectionData;  //Injection data copied locally here
         {   /// Compression of injection data
             log << "Compressing data..." << endl;
             Compressor c;
@@ -91,7 +73,27 @@ bool Injector::inject(const std::string& path){
             }
         }   // End compression scope
 
-        unsigned int sz = newData.size();
+
+        string needle = NEEDLE_OPEN;
+        size_t length, pos;
+        {   /// Search for import location in exe file data
+            log << "Searching for import location..." << endl;
+            pos = fdata.find(needle);
+            if(pos == string::npos) {
+                log << "Could not find target injection offset" << endl;
+                break;
+            }
+            length = fdata.find('\0', pos) - pos;
+            log << "Found injection target @" << pos << " of length " << length << endl;
+
+            if(newData.size() + sizeof(sz) > length){    //Check if the new data is larger than what the target will accept
+                log << "Cannot inject more data than allocated" << endl;
+                break;
+            }
+        }   // End searching scope
+
+
+        sz = newData.size();
         {   /// Inject data into memory and fill the rest with null
             log << "Injecting " << sz << " bytes of new data into memory..." << endl;
 

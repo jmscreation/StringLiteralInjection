@@ -5,10 +5,11 @@
 	<fstream>
 	<sstream>
 
-1573762185 source:z:\josh\c++\codeinjection\maininject.cpp
+1573767660 source:z:\josh\c++\codeinjection\maininject.cpp
 	<iostream>
 	<string>
 	"empty.h"
+	"console.h"
 	"injector.h"
 	"compressor.h"
 
@@ -17,7 +18,7 @@
 	"empty.h"
 	"compressor.h"
 
-1573752761 z:\josh\c++\codeinjection\compressor.h
+1573756361 z:\josh\c++\codeinjection\compressor.h
 	<string>
 	<stdexcept>
 	<iostream>
@@ -25,12 +26,12 @@
 	<sstream>
 	<zlib.h>
 
-1573752862 source:z:\josh\c++\codeinjection\compressor.cpp
+1573756462 source:z:\josh\c++\codeinjection\compressor.cpp
 	"compressor.h"
 
-1573757580 z:\josh\c++\codeinjection\empty.h
+1573761180 z:\josh\c++\codeinjection\empty.h
 
-1573761365 z:\josh\c++\codeinjection\injector.h
+1573764965 z:\josh\c++\codeinjection\injector.h
 	<iostream>
 	<string>
 	<fstream>
@@ -39,8 +40,14 @@
 	"empty.h"
 	"compressor.h"
 
-1573759215 source:z:\josh\c++\codeinjection\resources.rc
+1573762815 source:z:\josh\c++\codeinjection\resources.rc
 
 1573761512 source:z:\josh\c++\codeinjection\injector.cpp
 	"injector.h"
+
+1573767598 source:z:\josh\c++\codeinjection\console.cpp
+	"console.h"
+
+1573767619 z:\josh\c++\codeinjection\console.h
+	"windows.h"
 
